@@ -15,6 +15,8 @@ Edit existing posts
 
 Delete posts
 
+Add image.
+
 Server-rendered views using EJS
 
 Technologies Used
@@ -31,22 +33,16 @@ Nodemon (for development server auto-reload)
 Installation & Setup
 Clone the repository
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/blog-hub.git
-cd blog-hub
+
+git clone https://github.com/arifmohammad30/BLOG-APP.git
+cd BLOG-APP
 Install dependencies
 
-bash
-Copy
-Edit
+
 npm install
 Run the app
 
-bash
-Copy
-Edit
+
 npm start
 Access in browser
 
@@ -56,11 +52,11 @@ Folder Structure
 csharp
 Copy
 Edit
-blog-hub/
-├── public/          # Static files (CSS, JS if any)
+BLOG-APP/
+├── public/          # Static files (CSS, images)
 ├── routes/          # Express route handlers
 ├── views/           # EJS templates
-├── app.js           # Main Express app
+├── index.js           # Main Express app
 ├── package.json
 └── README.md
 Usage
@@ -73,7 +69,7 @@ Use Create New Blog Post to add new content.
 Edit or delete posts via their respective buttons.
 
 Future Improvements
-Add image upload support with file storage or cloud hosting.
+
 
 Implement user authentication.
 
