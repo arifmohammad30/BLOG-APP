@@ -46,8 +46,7 @@ let posts = [
     content:
       "Excited to share that I've been selected for a new position as Senior Developer! The interview process was challenging but rewarding. Looking forward to this new chapter in my professional journey and the opportunity to work on more complex projects.",
     category: "Career",
-    imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8am9ifGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    imageUrl:"/images/workk.jpg",
     createdAt: new Date().toISOString(),
   },
   {
@@ -57,15 +56,14 @@ let posts = [
     content:
       "After months of searching and interviewing, I finally landed my dream job at a tech startup! The company culture is amazing, and I'll be working with cutting-edge technologies. Can't wait to start this new chapter and share my experiences along the way.",
     category: "Personal",
-    imageUrl:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+    imageUrl:"/images/new.jpg",
     createdAt: new Date().toISOString(),
   },
 ];
 
 // Routes
 app.get("/", (req, res) => {
-  // 7. Root route redirect to main route
+
   res.redirect("/posts");
 });
 
@@ -84,7 +82,7 @@ app.post("/posts", (req, res) => {
 
   if (!imageUrl || imageUrl.trim() === "") {
     imageUrl =
-      "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60";
+      "/images/learning.jpg";
   }
 
   posts.push({ id, title, username, content, category, imageUrl, createdAt });
