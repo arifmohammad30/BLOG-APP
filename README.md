@@ -2,7 +2,7 @@ Blog Hub
 Share your thoughts with the world
 
 Overview
-Blog Hub is a simple blog post application built using Express.js REST APIs and EJS templating engine for views. It allows users to view, create, edit, and delete blog posts. This app focuses on text-based content sharing without image hosting support.
+Blog Hub is a simple blog post application built using Express.js REST APIs and EJS templating engine for views. It allows users to view, create, edit, and delete blog posts. This app focuses on text-based content sharing with image hosting support.
 
 Features
 View a list of blog posts categorized by topics
