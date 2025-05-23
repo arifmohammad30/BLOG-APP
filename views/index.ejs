@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG HUB</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-rss"></i> BLOG HUB</h1>
+            <p class="tagline">Share your thoughts with the world</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="blogs-container">
+            <% for (post of posts) { %>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('<%= post.imageUrl %>')">
+                        <span class="category"><%= post.category %></span>
+                    </div>
+                    <div class="blog-header">
+                        <span class="date"><i class="far fa-calendar-alt"></i> <%= new Date(post.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></span>
+                    </div>
+                    <h2 class="blog-title"><%= post.title %></h2>
+                    <p class="author">By @<%= post.username %></p>
+                    <div class="blog-content">
+                        <p><%= post.content.substring(0, 150) %>... <a href="/posts/<%= post.id %>" class="read-more">Read more</a></p>
+                    </div>
+                    <div class="blog-actions">
+                        <a href="/posts/<%= post.id %>" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                        <a href="/posts/<%= post.id %>/edit" class="btn-small btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                        <form style="display: inline" method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                            <button class="btn-small btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+        <div class="action-bar">
+            <a href="/posts/new" class="btn-new"><i class="fas fa-plus"></i> Create New Blog Post</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

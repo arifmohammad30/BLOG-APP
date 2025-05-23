@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog Post - BLOG HUB</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header small-header">
+        <h1><i class="fas fa-rss"></i> BLOG HUB</h1>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Edit Blog Post</h2>
+            
+            <form class="blog-form" method="post" action="/posts/<%= post.id %>?_method=PATCH">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" class="input-field" name="title" value="<%= post.title %>" required>
+                </div>
+                
+                <div class="form-info">
+                    <span>Author: @<%= post.username %></span>
+                    <span class="date">Created: <%= new Date(post.createdAt).toLocaleDateString() %></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="imageUrl">Featured Image URL</label>
+                    <input id="imageUrl" class="input-field" name="imageUrl" value="<%= post.imageUrl %>">
+                    <small class="form-hint">Leave empty to keep current image</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" class="input-field" name="category" required>
+                        <option value="Technology" <%= post.category === "Technology" ? "selected" : "" %>>Technology</option>
+                        <option value="Career" <%= post.category === "Career" ? "selected" : "" %>>Career</option>
+                        <option value="Personal" <%= post.category === "Personal" ? "selected" : "" %>>Personal</option>
+                        <option value="Health" <%= post.category === "Health" ? "selected" : "" %>>Health</option>
+                        <option value="Travel" <%= post.category === "Travel" ? "selected" : "" %>>Travel</option>
+                        <option value="Food" <%= post.category === "Food" ? "selected" : "" %>>Food</option>
+                        <option value="Other" <%= post.category === "Other" ? "selected" : "" %>>Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" class="textarea-field" name="content" required><%= post.content %></textarea>
+                </div>
+                
+                <div class="preview-container">
+                    <label>Current Image Preview:</label>
+                    <img src="<%= post.imageUrl %>" alt="<%= post.title %>" class="image-preview">
+                </div>
+                
+                <div class="form-actions">
+                    <a href="/posts" class="btn-cancel">Cancel</a>
+                    <button class="btn-submit" type="submit">Update Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 

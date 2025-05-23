@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Blog Post - BLOG HUB</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header small-header">
+        <h1><i class="fas fa-rss"></i> BLOG HUB</h1>
+    </header>
+    
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Create New Blog Post</h2>
+            <form class="blog-form" method="POST" action="/posts">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" class="input-field" placeholder="Enter blog title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="username">Author</label>
+                    <input id="username" class="input-field" placeholder="Enter your username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="imageUrl">Featured Image URL</label>
+                    <input id="imageUrl" class="input-field" placeholder="Enter image URL (optional)" name="imageUrl">
+                    <small class="form-hint">Leave empty to use a default image</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" class="input-field" name="category" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Career">Career</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Health">Health</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Food">Food</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" class="textarea-field" placeholder="Write your blog post" name="content" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <a href="/posts" class="btn-cancel">Cancel</a>
+                    <button class="btn-submit" type="submit">Publish Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 

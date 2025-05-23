@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %> - BLOG HUB</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header small-header">
+        <h1><i class="fas fa-rss"></i> BLOG HUB</h1>
+    </header>
+
+    <div class="container">
+        <article class="blog-post">
+            <div class="blog-post-image">
+                <img src="<%= post.imageUrl %>" alt="<%= post.title %>">
+            </div>
+            <div class="blog-post-header">
+                <span class="category-badge"><%= post.category %></span>
+                <h1 class="blog-post-title"><%= post.title %></h1>
+                <div class="blog-post-meta">
+                    <span class="author"><i class="fas fa-user"></i> @<%= post.username %></span>
+                    <span class="date"><i class="far fa-calendar-alt"></i> <%= new Date(post.createdAt).toLocaleDateString('en-US', { 
+                        weekday: 'long', 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    }) %></span>
+                </div>
+            </div>
+            
+            <div class="blog-post-content">
+                <p><%= post.content %></p>
+            </div>
+            
+            <div class="blog-post-actions">
+                <a href="/posts/<%= post.id %>/edit" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit Post</a>
+                <form style="display: inline" method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button class="btn-action btn-delete"><i class="fas fa-trash"></i> Delete Post</button>
+                </form>
+                <a href="/posts" class="btn-action btn-back"><i class="fas fa-arrow-left"></i> Back to All Posts</a>
+            </div>
+        </article>
+    </div>
+</body>
+</html> 
