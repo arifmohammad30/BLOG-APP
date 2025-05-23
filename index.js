@@ -35,7 +35,7 @@ let posts = [
     content:
       "I've been on an incredible learning journey with web development. Every day brings new challenges and insights that help me grow as a developer. The more I learn, the more I realize how vast this field truly is.",
     category: "Technology",
-    imageUrl:"\public\images\learning.jpg",
+    imageUrl:"/images/learning.jpg",
       
     createdAt: new Date().toISOString(),
   },
