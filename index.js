@@ -35,8 +35,8 @@ let posts = [
     content:
       "I've been on an incredible learning journey with web development. Every day brings new challenges and insights that help me grow as a developer. The more I learn, the more I realize how vast this field truly is.",
     category: "Technology",
-    imageUrl:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    imageUrl:"\public\images\learning.jpg",
+      
     createdAt: new Date().toISOString(),
   },
   {
